@@ -1,0 +1,315 @@
+<html>
+    <head><title>
+        GHC</title>
+    </head>
+<style> 
+body{
+   background-color:black;
+   overflow-x:hidden;
+}
+text {
+    place-items: center;
+}
+h1 {
+  color: #fff;
+  font-size: 8vw;
+  letter-spacing: 4 px;
+  position: relative;
+  font-family: "Architects Daughter", cursive;
+
+}
+.center {
+  width: 100%;
+  height: 27vh;
+  display: grid;
+  place-items: center;
+}
+h1::before {
+  content: " LOADING..";
+  width: 100%;
+ 
+  color: cyan;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-right: 5px solid rgb(37, 184, 184);
+  animation: 3s slide linear infinite;
+  overflow: hidden;
+}
+@keyframes slide {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+#metro1{
+   background-image:url('https://wpclipart.com/buildings/city/skyline/cityscape_T.png');
+   background-position:top;
+   height:400px;
+}
+#metro{
+   margin-top:-100px;
+   width:100%;
+   height:60px;
+   background-color:transparent;
+   transform:translateX(0px);
+   animation-name:movetrain;
+   animation-duration:8s;
+   animation-iteration-count:infinite;
+   margin-left: 250px;
+}
+#metro span{
+   display:inline-block;
+}
+.door, .door2{
+   width:30px;
+   height:43px;
+   background-color:#CF1D01;
+   position:absolute;
+   margin-top:18px;
+   margin-left:10px;
+   box-shadow:inset 0 -5px 0 #961703;
+   border:1px solid black;
+}
+.door2{
+   width:25px;
+   margin-top:-18px;
+   margin-left:215px;
+}
+.door::before, .door2::before{
+   content:"";
+   width:20px;
+   height:19px;
+   background-color:#008ACB;
+   box-shadow:inset 0 0 10px #004FC8, inset 0 2px 0 blue;
+   position:absolute;
+   margin-top:4px;
+   margin-left:2px;
+   border:3px solid #961703;
+}
+.door2::before{
+   width:17px;
+   margin-left:1px;
+}
+
+.mirror, .mirror1{
+   width:154px;
+   height:15px;
+   background-color:#666665;
+   margin-top:18px;
+   margin-left:50px;
+   border:1px solid black;
+}
+.mirror1{
+   width:140px;
+   border-radius:0 100% 0 0;
+}
+.mirror span, .mirror1 span{
+   display:inline-block;
+}
+.m1, .m2, .m3, .m4, .m22{
+   display:inline-block;
+   width:35px;
+   height:11px;
+   background-color:#008ACB;
+   position:absolute;
+   margin-top:1px;
+   margin-left:1px;
+   box-shadow:inset 0 0 8px #004FC8;
+   border:1px solid blue;
+}
+.m22{
+   width:70px;
+   border-radius:0 100% 0 0;
+   margin-left:42px;
+}
+.m2{
+   margin-left:40px;
+}
+.m3{
+   margin-left:79px;
+}
+.m4{   
+   margin-left:117px;
+}
+.back{
+   background-color:#E3E1E1;
+   width:250px;
+   height:60px;
+   margin-right: -4px ;
+   box-shadow: 0 8px 6px -6px yellow, inset 0 9px 0 #666665, inset 0 15px 0 black;
+}
+.back::after{
+   content:"";
+  
+   width:6px;
+   height:10px;
+   position:absolute;
+   margin-left:249px;
+   margin-top:1px;
+   
+}
+.back::before{
+   content:"";
+   width:250px;
+   height:20px;
+   background-color:#CF1D01;
+   border-top:1px solid #CF1D01;
+   box-shadow:inset 0px 4px 0px #E3E1E1, 0 4px 0px black,inset 0 -5px 0px #961703;
+   position:absolute;
+   margin-top:40px;
+  
+}
+.engine{
+   background-color:#E3E1E1;
+   width:300px;
+   height:60px;
+   border-radius:0px 100% 10px 10px;
+   box-shadow: 0 8px 6px -6px yellow, inset 0 9px 0 #666665, inset 0 15px 0 black;
+}
+
+.pra{
+   background-color:#E3E1E1;
+   width:300px;
+   height:60px;
+   border-radius:100% 0px 0px 0px;
+   margin-right:-4px;
+   box-shadow: 0 8px 6px -6px yellow, inset 0 9px 0 #666665, inset 0 15px 0 black;
+}
+.doo{
+    margin-top:35px;
+    margin-left:38px;
+}
+
+.pra::before{
+   content:"";
+   width:300px;
+   height:20px;
+   background-color:#CF1D01;
+   border-top:1px solid #CF1D01;
+   box-shadow:inset 0px 4px 0px #E3E1E1, 0 4px 0px black,inset 0 -5px 0px #961703;
+   position:absolute;
+   margin-top:40px;
+   margin-right:-4px;
+   border-radius:100% 0px 0px 0px;
+}
+.engine::before{
+   content:"";
+   width:280px;
+   height:20px;
+   background-color:#CF1D01;
+   border-top:1px solid #CF1D01;
+   box-shadow:inset 0px 4px 0px #E3E1E1, 0 4px 0px black,inset 0 -5px 0px #961703;
+   position:absolute;
+   margin-top:40px;
+   border-radius:0 100% 0px 0px;
+}
+.track{
+   background-color: CYAN ;
+   width:100%;
+   height:10px;
+   border-top:3px solid black;
+   position:relative;
+   margin-top:5px;
+}
+.engine::after{
+   content:"";
+  
+   width:4px;
+   height:4px;
+   position:absolute;
+   margin-left:130px;
+   margin-top:-63px;
+   border-radius:50%;
+   
+   
+   animation-duration:2s;
+   animation-iteration-count:infinite;
+}
+@keyframes movetrain{
+   from{
+      transform:translateX(-100%);
+   }   
+   to{
+      transform:translateX(100%);
+   }
+   60%{
+      transform:translateX(100px);
+   }
+   81%{
+      transform:translateX(310px);
+   }
+   82%{
+      transform:translateX(311px);
+   }
+   83%{
+      transform:translateX(312px);
+   }
+   84%{
+      transform:translateX(313px);
+   }
+   85%{
+      transform:translateX(314px);
+   }
+   89%{
+      transform:translateX(320px);
+   }
+   90%{
+      transform:translateX(400px);
+   }
+}
+
+
+
+</style>
+ <body>
+    <div class="center">
+        <h1> LOADING..</h1>
+      </div>
+     
+     <div id="metro1">
+     </div>
+     <div id="metro">
+        <span class="pra">
+            <div class="doo">   
+               <div class="door2"></div> 
+             </div> 
+         </span>
+        <span class="back">
+           <div class="door"></div>
+           <div class="mirror">
+              <span class="m1"></span>
+              <span class="m2"></span>
+              <span class="m3"></span>
+              <span class="m4"></span>
+           </div>
+           <div class="door2"></div>
+        </span>
+        <span class="back">
+           <div class="door"></div>
+           <div class="mirror">
+              <span class="m1"></span>
+              <span class="m2"></span>
+              <span class="m3"></span>
+              <span class="m4"></span>
+           </div>
+           <div class="door2"></div>
+        </span>
+        <span class="engine">
+
+           <div class="door"></div>
+           <div class="mirror1">
+              <span class="m1"></span>
+              <span class="m22"></span>
+           </div>
+        </span>
+     </div>
+     <div class="track">
+     </div>
+ </body>   
+</html>
